@@ -8,12 +8,11 @@ import SalesReport from './components/SalesReport';
 import InvoiceForm from './components/InvoiceForm';
 import InvoicePDF from './components/InvoicePDF';
 import axios from 'axios';
+import Register from './components/Register';
+import Login from './components/Login';
 
-const initialProducts = [
-  { id: 1, name: 'Producto 1', price: 29.99, image: '/images/producto1.jpg' },
-  { id: 2, name: 'Producto 2', price: 19.99, image: '/images/producto2.jpg' },
-  { id: 3, name: 'Producto 3', price: 39.99, image: '/images/producto3.jpg' },
-];
+
+const initialProducts = [];
 
 const initialSalesData = [
   { time: '2023-01-01', value: 100 },
@@ -108,6 +107,11 @@ const App = () => {
     setPaymentInfo(info);
   };
 
+  const PrivateRoute = ({ children }) => {
+    const role = localStorage.getItem('role');
+    return role === 'admin' ? children : <div>No tienes acceso a esta página</div>;
+  };
+
   return (
     <div className="app">
       <Header cartCount={cartItems.length} />
@@ -128,6 +132,8 @@ const App = () => {
         <Route path="/sales-report" element={<SalesReport data={salesData} />} />
         <Route path="/invoice" element={<InvoiceForm cartItems={cartItems} />} />
         <Route path="/invoice-pdf" element={<InvoicePDF />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
       {showCartMenu && (
         <CartMenu

@@ -8,7 +8,6 @@ const Product = ({ product, onAddToCart }) => {
 
   return (
     <div className="product">
-      <img src={product.image} alt={product.name} />
       <img src={imageURL} alt={product.name} />
       <h2>{product.name}</h2>
       <p>${product.price.toFixed(2)}</p>

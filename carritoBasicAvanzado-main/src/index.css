@@ -818,130 +818,126 @@ p strong {
 
 /***************Estilos componente UpdateUser.jsx *********************/
 
-/* Contenedor principal del formulario */
-.update-user-form {
-  max-width: 400px;
-  margin: 50px auto;
+/***************Estilos componente Pedidos.jsx *********************/
+
+/* Contenedor principal de los pedidos */
+.pedidos-container {
+  max-width: 900px;
+  margin: 0 auto;
   padding: 20px;
-  background-color: #fff;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to right, #f7f8fc, #e2e6ee);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Título del formulario */
-.update-user-form h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #333;
-  font-family: 'Roboto', sans-serif;
-  font-size: 24px;
-}
-
-/* Mensajes de error */
-.update-user-form .error {
-  color: red;
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-/* Mensajes de éxito */
-.update-user-form .success {
-  color: green;
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-/* Formulario */
-.update-user-form form {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centrar elementos del formulario */
-}
-
-/* Grupos de formulario */
-.update-user-form .form-group {
-  margin-bottom: 15px; /* Espaciado entre los grupos de formulario */
-  width: 100%; /* Asegurar que los grupos ocupen todo el ancho */
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* Alinear etiquetas al inicio */
-}
-
-/* Etiquetas */
-.update-user-form label {
-  margin-bottom: 5px;
-  color: #555;
-  font-family: 'Roboto', sans-serif;
-  font-size: 14px;
-  display: block; /* Hacer que las etiquetas ocupen toda la línea */
-  width: 100%;
-}
-
-/* Campos de entrada */
-.update-user-form input {
-  padding: 10px;
-  width: 100%; /* Asegurar que los inputs ocupen todo el ancho disponible */
+/* Tarjeta individual de cada pedido */
+.pedido-card {
   border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background: linear-gradient(to bottom right, #fff, #f9f9f9);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.pedido-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Encabezado y pie de la tarjeta de pedido */
+.pedido-header, .pedido-footer {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+}
+
+/* Párrafos dentro del encabezado, pie y cuerpo de la tarjeta de pedido */
+.pedido-header p, .pedido-footer p, .pedido-body p {
+  margin: 8px 0;
+  font-size: 15px;
+  color: #444;
+}
+
+/* Títulos dentro del cuerpo y pie de la tarjeta de pedido */
+.pedido-body h3, .pedido-footer h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 20px;
   color: #333;
-  font-family: 'Roboto', sans-serif;
-  transition: border-color 0.3s ease;
 }
 
-/* Campos de entrada cuando están en foco */
-.update-user-form input:focus {
-  border-color: #007bff;
-  outline: none;
+/* Elemento individual de producto dentro de la tarjeta de pedido */
+.pedido-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: #f4f6f8;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s;
 }
 
-/* Botón de envío */
-.update-user-form button {
-  padding: 12px 24px; /* Ajustar padding */
-  background-color: #013220; /* Color verde oscuro */
-  border: none;
-  border-radius: 4px;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  font-family: 'Roboto', sans-serif;
-  width: 100%; /* Asegurar que el botón ocupe todo el ancho disponible */
+.pedido-item:hover {
+  background-color: #e8ecef;
 }
 
-.update-user-form button:hover {
-  background-color: #011910; /* Color del botón en hover */
+.product-image {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  margin-right: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
 }
 
-/* Estilos responsivos */
-@media (max-width: 480px) {
-  .update-user-form {
-    margin: 20px;
-    padding: 15px;
-  }
-
-  .update-user-form h2 {
-    font-size: 20px;
-  }
-
-  .update-user-form input {
-    font-size: 14px;
-  }
-
-  .update-user-form button {
-    font-size: 14px;
-  }
+/* Párrafos dentro de los detalles del producto */
+.item-details p {
+  margin: 4px 0;
+  font-size: 15px;
+  color: #555;
 }
 
-/* Estilos específicos para el enlace de bienvenida dentro del span */
-span a {
-  color: white; /* Color del texto */
-  text-decoration: none; /* Quita el subrayado del enlace */
-  font-weight: bold; /* Hacer que el texto sea negrita */
-  padding: 0 10px; /* Añade padding a los lados */
+/* Título principal de la página de pedidos */
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 25px;
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-span a:hover {
-  color: #ff9800; /* Color del texto al pasar el cursor */
+/* Estilo para texto en negrita */
+p strong {
+  color: #555;
 }
+
+/* Clase general para el estado del pedido */
+.estado {
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.estado.pendiente {
+  color: #d9534f;
+  background-color: #f2dede;
+}
+
+.estado.pagado {
+  color: #5cb85c;
+  background-color: #dff0d8;
+}
+
+.estado.enviado {
+  color: #5bc0de;
+  background-color: #d9edf7;
+}
+
+/**************************************************************/

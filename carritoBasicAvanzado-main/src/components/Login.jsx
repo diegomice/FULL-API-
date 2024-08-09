@@ -40,6 +40,7 @@ const Login = () => {
       // Almacena el email en el localStorage.
       localStorage.setItem('email', response.data.email);
       // Dispara un evento de almacenamiento para notificar a otros componentes de la actualización.
+      localStorage.setItem('email', response.data.email); // Almacena el email
       window.dispatchEvent(new Event('storage'));
       // Redirige al usuario a la página principal.
       navigate('/');
